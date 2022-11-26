@@ -69,14 +69,17 @@ const usuariosDelete = async (req, res = response) => {
 
     const { id } = req.params
 
+    let usuarioAuth = req.usuario
+
     //Fisicamente lo borramos: NO SE RECOMIENDA BORRAR FISICAMENTE REGISTROS DE UNA DB
     //const usuario = await Usuario.findByIdAndDelete(id);
 
     //Virtualmente actualizamos el campo estado a false y a esto le llamamos "eliminado"
-    const usuario = await Usuario.findByIdAndUpdate(id, { estado: false });
+    const usuarioDel = await Usuario.findByIdAndUpdate(id, { estado: false });
 
     res.json({
-        msg: `Usuario con ID: ${id} fue eliminado.`
+        usuarioDel,
+        usuarioAuth
     })
 }
 
