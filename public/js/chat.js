@@ -1,4 +1,4 @@
-const url = 'http://localhost:8080/api/auth/'
+const url = 'https://07-restserver-node-production-1c4d.up.railway.app/api/auth/'
 
 //Referencias HTML
 const txtUid = document.querySelector('#txtUid');
