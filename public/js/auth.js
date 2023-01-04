@@ -1,4 +1,6 @@
-const url = 'https://07-restserver-node-production-1c4d.up.railway.app/api/auth/'
+const url = ( window.location.hostname.includes('localhost') )
+                ? 'http://localhost:8080/api/auth/'
+                : 'https://07-restserver-node-production-1c4d.up.railway.app/api/auth/'
 
 const miFormulario = document.querySelector('form');
 
